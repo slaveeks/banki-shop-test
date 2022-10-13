@@ -3,12 +3,17 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require("vue-loader");
 
-// module
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist')
+    },
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src/components'),
+        },
+        extensions: [".wasm", ".mjs", ".js", ".jsx", ".ts", ".tsx", ".json", ".vue"],
     },
     devServer: {
         static: { directory: path.join(__dirname, "dist") },
@@ -16,7 +21,8 @@ module.exports = {
         open: true,
     },
     module: {
-        rules: [ {
+        rules: [
+            {
             test:/\.scss$/,
             use: [{
                 loader: 'style-loader'
