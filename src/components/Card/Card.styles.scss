@@ -1,0 +1,32 @@
+.card {
+  width: 280px;
+  height: 328px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E1E1E1;
+}
+
+.image {
+  height: 160px;
+  background-color: black;
+}
+
+.info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.buy {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.old {
+  text-decoration: line-through;
+  color: #A0A0A0;
+}
